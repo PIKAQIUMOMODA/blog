@@ -1,0 +1,281 @@
+body
+{
+    background-image: url("../images/backgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size:cover;
+    background-attachment:fixed;
+    background-position: center center;
+
+
+}
+.m-background-transparent
+{
+    background-color: transparent !important;
+
+}
+.m-margin-top
+{
+    margin-top:40px !important;
+  /*  border:1px solid palegreen;*/
+}
+
+.m-container-border
+{
+    border:1px solid red;
+}
+
+/*内边距大小*/
+.m-padded-tb-mini {
+    padding-top:0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+.m-padded-tb-tiny
+{
+    padding-top:0.3em !important;
+    padding-bottom: 0.3em !important;
+
+}
+.m-padded-tb-small
+{
+    padding-top:0.4em !important;
+    padding-bottom: 0.4em !important;
+
+}
+.m-padded-tb-medium
+{
+    padding-top:0.5em !important;
+    padding-bottom: 0.5em !important;
+
+}
+.m-padded-tb-large
+{
+    padding-top:1em !important;
+    padding-bottom: 1em !important;
+}
+.m-padded-tb-huge
+{
+    padding-top:2em !important;
+    padding-bottom: 2em !important;
+
+}
+.m-padded-tb-massive
+{
+    padding-top:2.5em !important;
+    padding-bottom:2.5em !important;
+
+}
+
+
+.m-margin-medium
+{
+    margin: 0.5em !important;
+
+}
+.m-margin-large{
+    margin: 1em !important;
+}
+
+
+/*透明度级别1-10*/
+.m-opacity-1
+{
+    opacity:0.1 !important;
+}
+.m-opacity-2
+{
+    opacity:0.2 !important;
+}
+.m-opacity-3
+{
+    opacity:0.3 !important;
+}
+.m-opacity-4
+{
+    opacity:0.4 !important;
+}
+.m-opacity-5
+{
+    opacity:0.5 !important;
+}
+.m-opacity-6
+{
+    opacity:0.6 !important;
+}
+.m-opacity-7
+{
+    opacity:0.7 !important;
+}
+.m-opacity-8
+{
+    opacity:0.8 !important;
+}
+.m-opacity-9
+{
+    opacity:0.9 !important;
+}
+.m-opacity-10
+{
+    opacity:1 !important;
+}
+
+
+/*联系方式*/
+.m-contact-way{
+    text-decoration:none;
+    color:white;
+}
+
+/*文本设置*/
+.m-text-thin{
+    font-weight: 300 !important;
+}
+.m-text-spaced{
+    letter-spacing: 1px !important;
+}
+.m-text-lined
+{
+    line-height: 1.8;
+}
+.m-inline-block {
+  display: inline-block;
+}
+
+/*这里是用来设置文章图片的动画效果*/
+.m-title-border
+{
+    overflow:hidden;
+
+}
+.m-title-image img{
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+}
+.m-title-image img:hover
+{
+
+    transform: scale(1.5,1.5);
+}
+/*导航条设置*/
+.m-top-right
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+.m-mobile-show
+{
+    display:none !important;
+}
+/*移动端的时候才做处理*/
+@media screen and (max-width: 768px){
+    /*.m-mobile-hide*/
+    /*{*/
+    /*    display: none !important;*/
+    /*}*/
+    .m-mobile-show
+    {
+        display: block !important;
+    }
+    .js-toc{
+        max-width: 300px;
+    }
+
+}
+
+/*博客页内容定制*/
+.m-blog-image-content{
+    width: 100%;
+    position: relative;
+}
+
+.m-phrase{
+    position: absolute;
+    top:20%;
+    width: inherit;
+    z-index: 100;
+
+
+}
+.m-phrase-font
+{
+
+    font-weight: bold;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+
+.m-padded-content-medium
+{
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.m-container-middle
+{
+
+    padding-left:50px;
+    padding-right: 50px;
+}
+
+.m-fixed{
+    position: fixed;
+    z-index: 1000;
+}
+.m-right-bottom{
+    right: 5px !important;
+    bottom: 100px !important;
+}
+.m-left-top{
+    left: 100px !important;
+    top: 100px !important;
+}
+
+/*关于我页面的css*/
+.m-hidden{
+    overflow: hidden !important;
+}
+.m-about-image{
+    position: relative;
+}
+.m-about-image-title{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    right: 20%;
+    color: white;
+    font-size: 1em !important;
+    line-height: 2em;
+}
+
+/**/
+/*
+.toc-list {
+    margin: 5px;
+    padding-left: 17px;
+}
+*/
+.js-toc
+{
+    width: 500px;
+}
+/*
+.js-toc *:before{
+    content: "" !important;
+    background-color: red !important;
+}
+*/
+.toc-link::before{
+    height: 15px !important;
+
+}
+
+
+.m-text-ellipsis{
+    overflow: hidden ;
+    text-overflow:ellipsis
+}

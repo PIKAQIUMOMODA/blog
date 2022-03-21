@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+p-background
+{
+    max-width: 100%;
+    background-image:url("../images/girls.jpg");
+    background-size: cover; /*保持纵横比，最小*/
+    background-position: center; /*图片左对齐*/
+   /* background-blend-mode: overlay;*/
+    /*-webkit-filter: blur(5px);*/
+   /* filter: blur(5px);*/ /*元素添加可视效果 (例如：模糊与饱和度)*/
+    background-attachment:fixed;
+
+}
+.p-background{
+    background-color: snow;
+}
+.p-container{
+    width: 80%;
+    margin:20px auto;
+   /* border: 1px solid #00d95a;*/
+}
+.p-photowall-list{
+    width: 80%;
+    margin: auto;
+    /*border: 1px solid #009ABB;*/
+}
+
+.p-list-item{
+    margin: 10px;
+  /*  display: inline-block;*/
+    width: 30%;
+    cursor: pointer;
+  /*  border: 1px solid #9d1e15;*/
+   /* margin-left: 10px;
+    margin-top: 10px;*/
+    box-shadow: 0 0 10px 2px wheat;
+
+    /*过渡动画*/
+    transition-property: width;
+    transition-delay: 0s;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+
+}
+.p-list-item:hover{
+ /*   transform: scale(1.5,1.5);
+    transform: rotateZ(10deg);*/
+   /* width: 500px;*/
+
+}
+.p-photo{
+    width:100%;
+    background: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.p-photo-img{
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 2px #009ABB;
+}
+.p-photo-title{
+    color: #002b36;
+    font-size: larger;
+    text-align: center;
+    text-align: -webkit-center;
+
+
+}
+.p-hidden{
+    display: none;
+}
+.p-visiblity{
+    display: inline-block;
+}

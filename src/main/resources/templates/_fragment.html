@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" url="https://goo.gl/xX8pDD">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title th:replace="${title}">博客详情页</title>
+    <!--引入链接cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="../static/css/timeline.css" th:href="@{/css/timeline.css}">
+</head>
+<body>
+<!--导航条-->
+<nav th:fragment="menu(n)" class="ui teal inverted attached basic segment m-padded-tb-mini m-opacity-9">
+    <div class="ui container">
+        <div class="ui  stackable inverted secondary  menu">
+            <h2 class="ui violet header item">Blog</h2>
+            <a class="m-item item m-mobile-hide" th:href="@{/}" th:classappend="${n==1}?'active'"><i class="home icon"></i>首页</a>
+            <a class="m-item item m-mobile-hide" th:href="@{/types/-1}" th:classappend="${n==2}?'active'"><i class="idea icon"></i>分类</a>
+            <a class="m-item item m-mobile-hide" th:href="@{/tags/-1}" href="#" th:classappend="${n==3}?'active'"><i class="tags icon"></i>标签</a>
+            <a class="m-item item m-mobile-hide" th:href="@{/archives}" href="#" th:classappend="${n==4}?'active'"><i class="file icon"></i>归档</a>
+            <a class="m-item item m-mobile-hide" th:href="@{/about}"  th:classappend="${n==5}?'active'"><i class="info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide ">
+                <form name="search" method="post" action="#" th:action="@{/search}" target="_blank">
+                    <div class="ui icon inverted  input">
+                        <input type="text" name="query" placeholder="Search.."  th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <a class="ui m-menu toggle icon button m-top-right m-mobile-show">
+        <i class="bookmark icon" id="sidebarIcon"></i>
+    </a>
+</nav>
+
+<footer th:fragment="footer" class="ui teal inverted vertical center aligned segment m-opacity-9 m-margin-top">
+    <div class="ui container">
+        <div class="ui divided stackable grid  m-padded-tb-massive">
+            <!--联系我-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">联系我</h3>
+                <div class="ui list">
+                    <div class="item">
+                        <div class="content"><i class="user icon"></i>流水无情</div>
+                    </div>
+                    <div class="item">
+                        <div class="content"><i class="marker icon"></i>四川</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <i class="mail icon"></i>
+                            <a href="#" class="m-contact-way"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--微信公众号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">微信公众号</h3>
+                <img src="../static/images/avtor.jpg" th:src="@{/images/avtor.jpg}" class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--qq群号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">QQ群号</h3>
+                <img src="../static/images/avtor.jpg" th:src="@{/images/avtor.jpg}"  class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--名言-->
+            <div class="four wide column">
+                <h3>Blog</h3>
+                <p>这是我的个人博客、记录学习进度和关于编程、写作、思考相关的任何内容...</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <div>
+            <p class="m-text-thin m-text-spaced">
+<!--                Copyright © 2019 - 2020  XSH   Designed by Xiong_sh-->
+<!--                <br>-->
+<!--                赣ICP备20000310号-->
+<!--                <br>-->
+<!--                赣公网安备 36098102000147号-->
+<!--                <br>-->
+<!--                本站已安全运行 343 天 01 小时 55 分 51 秒-->
+            </p>
+
+        </div>
+    </div>
+    <iframe id="audioframe"  webkit-playsinline ="true" playsinline ="true" allow="autoplay" style="position: fixed;left:0;bottom:0" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1363948882&auto=1&height=66"></iframe>
+
+</footer>
+
+
+
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/scrollTo/jquery.scrollTo.min.js" th:src="@{/lib/scrollTo/jquery.scrollTo.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script>
+      $(function(){
+          $("#play").click();
+
+      })
+
+    </script>
+</th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragment::head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>后台首页</title>
+    <!--引入链接cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+<!--导航条-->
+<nav th:replace="admin/_fragment::menu(0)" class="ui teal inverted attached basic segment m-padded-tb-mini m-opacity-9">
+    <div class="ui container">
+        <div class="ui  stackable inverted secondary  menu">
+            <h2 class="ui violet header item">Blog管理</h2>
+            <a class="m-item item m-mobile-hide" href="#"><i class="home icon"></i>博客管理</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="idea icon"></i>分类管理</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="tags icon"></i>标签管理</a>
+            <div class="right menu" >
+                <div class="ui  dropdown item">
+                    <div class="text">
+                        <img class="ui avatar image" src="../../static/images/a1.png" th:src="@{/images/a1.png}" >
+                        <span>zcy</span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" >
+                            <span >注销</span>
+                        </div>
+                        <div class="item">
+                            <span >修改密码</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a class="ui m-menu toggle icon button m-top-right m-mobile-show">
+        <i class="bookmark icon" id="sidebarIcon"></i>
+    </a>
+</nav>
+
+<!--中间部分-->
+<div style="margin-top: 100px">
+    <div class="ui container">
+        <div class="ui top attached segment" style="text-align: center">
+            <h1>您好！<span th:text="${session.userz.nickname}" th:unless="${session==null}"  style="color:blue">test</span></h1>
+            <p>欢迎来到Blog后台页面管理</p>
+        </div>
+        <div class="ui attached segment">
+            <img src="../../static/images/a1.png" th:src="@{/images/a1.png}"  class="ui rounded centered image"/>
+        </div>
+
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="admin/_fragment::footer" class="ui teal inverted vertical center aligned segment m-opacity-9">
+    <div class="ui container">
+        <div class="ui divided stackable grid  m-padded-tb-massive">
+            <!--联系我-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">联系我</h3>
+                <div class="ui list">
+                    <div class="item">
+                        <div class="content"><i class="user icon"></i>流水无情</div>
+                    </div>
+                    <div class="item">
+                        <div class="content"><i class="marker icon"></i>四川-绵阳</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <i class="mail icon"></i>
+                            <a href="#" class="m-contact-way">369458281@qq.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--微信公众号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">微信公众号</h3>
+                <img src="../../static/images/avtor.jpg" class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--qq群号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">QQ群号</h3>
+                <img src="../../static/images/avtor.jpg" class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--名言-->
+            <div class="four wide column">
+                <h3>Blog</h3>
+                <p>这是我的个人博客、记录学习进度和关于编程、写作、思考相关的任何内容...</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <div>
+            <p class="m-text-thin m-text-spaced">
+                Copyright © 2019 - 2020  XSH   Designed by Xiong_sh
+                <br>
+                赣ICP备20000310号
+                <br>
+                赣公网安备 36098102000147号
+                <br>
+                本站已安全运行 343 天 01 小时 55 分 51 秒
+            </p>
+
+        </div>
+    </div>
+
+</footer>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>-->
+<script th:replace="admin/_fragment::script"></script>
+<script>
+    var isClosed=false;
+    var sidebar=$("#sidebarIcon");
+    $(".m-menu.toggle").click(function()
+    {
+
+        //$(".m-item").toggleClass("m-mobile-hide");
+        if(isClosed)
+        {
+            $(".m-item").slideDown();
+            sidebar.removeClass("sidebar icon");
+            sidebar.addClass("bookmark icon");
+            isClosed=false;
+        }else if(!isClosed)
+        {
+            $(".m-item").slideUp();
+            sidebar.removeClass("bookmark icon");
+            sidebar.addClass("sidebar icon");
+            isClosed=true;
+        }
+
+
+    });
+    $('.ui.dropdown').dropdown();
+    $('.ui.checkbox').checkbox();
+
+</script>
+
+</body>
+</html>

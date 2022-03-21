@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragment::head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta ><!--作者-->
+    <title>关于我</title>
+    <!--引入链接cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+<!--导航条-->
+<nav th:replace="_fragment::menu(5)" class="ui teal inverted attached basic segment m-padded-tb-mini m-opacity-9">
+    <div class="ui container">
+        <div class="ui  stackable inverted secondary  menu">
+            <h2 class="ui violet header item">Blog</h2>
+            <a class="m-item item m-mobile-hide" href="#"><i class="home icon"></i>首页</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="idea icon"></i>分类</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="tags icon"></i>标签</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="file icon"></i>归档</a>
+            <a class="m-item item m-mobile-hide" href="#"><i class="info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide ">
+                <div class="ui icon inverted  input">
+                    <input type="text" placeholder="Search..">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <a class="ui m-menu toggle icon button m-top-right m-mobile-show">
+        <i class="bookmark icon" id="sidebarIcon"></i>
+    </a>
+</nav>
+<!--中间部分-->
+<div class="m-margin-top">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <!--左边容器用于显示图片-->
+            <div class="ten wide column">
+                <div class="ui attached segment">
+                 <div class="ui grid">
+                     <div class="row ">
+                         <div class="sixteen column m-about-image">
+                             <div class="ui rounded image ">
+                                 <img  src="../static/images/a1.png" th:src="@{/images/a1.png}">
+                             </div>
+                             <span class="m-about-image-title">再次遇见你，一定是我们的缘分来的太好！再次遇见你，一定是我们的缘分来的太好！再次遇见你，一定是我们的缘分来的太好！</span>
+                         </div>
+                     </div>
+                     <div class="two column row">
+                         <div class="eight wide column ">
+                             <div class="ui medium rounded image" style="width: 300px !important;" >
+                                 <img  src="../static/images/a2.png" th:src="@{/images/a2.png}">
+                             </div>
+                         </div>
+                         <div class="eight wide column">
+                             <div class="ui medium rounded image" style="width: 300px !important;" >
+                                 <img  src="../static/images/a3.png" th:src="@{/images/a3.png}">
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+                </div>
+
+
+            </div>
+            <!--右边容器-->
+            <div class="six wide column">
+                <!--关于我-->
+                <div class="ui segments">
+                    <div class="ui segment">
+                        <h3 class="ui blue center aligned header">
+                            关于我
+                        </h3>
+                    </div>
+                    <div class="ui segment">
+                        <p style="text-indent: 10px">
+                            这是我的个人博客。在几年前用过 CSDN，但因为当时每次发布和更新文章都要等待审核，就转移到了 cnblog。直到我的第一份工作前，它都是我记录学习笔记的平台。后来出于爱折腾的缘故，我开始自己编写个人博客系统，先后零零散散出过很多版本，有用 Java（SSM）做过后台，也用过 Python（Django），当时部署在 Vultr 服务器上，没有绑定域名，直接用 IP 访问，自得其乐。 2018 年的时候，申请了一个域名，然后正式上线了自己的 Blog。
+
+                            关于本站的名字，既是取自我的名字，也是域名的谐音 —— wenyuanblog（文渊博客）。选域名的时候也纠结了好久，既要跟自己能联系在一起，又要好记顺口，字符还不能太长，当然最关键的是没被注册过。于是注册了 wenyuanblog.com。
+
+                            本站是我的技术分享博客，内容涵盖但不仅限于前/后端开发技术。只要是工作中，学习中，生活中遇到的有趣的事儿，我都会记录下来。相信若干年后，也是一份宝贵的回忆。
+                        </p>
+                        <p style="text-indent: 10px">
+                            这是我的个人博客。在几年前用过 CSDN，但因为当时每次发布和更新文章都要等待审核，就转移到了 cnblog。直到我的第一份工作前，它都是我记录学习笔记的平台。后来出于爱折腾的缘故，我开始自己编写个人博客系统，先后零零散散出过很多版本，有用 Java（SSM）做过后台，也用过 Python（Django），当时部署在 Vultr 服务器上，没有绑定域名，直接用 IP 访问，自得其乐。 2018 年的时候，申请了一个域名，然后正式上线了自己的 Blog。
+
+                            关于本站的名字，既是取自我的名字，也是域名的谐音 —— wenyuanblog（文渊博客）。选域名的时候也纠结了好久，既要跟自己能联系在一起，又要好记顺口，字符还不能太长，当然最关键的是没被注册过。于是注册了 wenyuanblog.com。
+
+                            本站是我的技术分享博客，内容涵盖但不仅限于前/后端开发技术。只要是工作中，学习中，生活中遇到的有趣的事儿，我都会记录下来。相信若干年后，也是一份宝贵的回忆。
+                        </p>
+                    </div>
+
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="_fragment::footer" class="ui teal inverted vertical center aligned segment m-opacity-9">
+    <div class="ui container">
+        <div class="ui divided stackable grid  m-padded-tb-massive">
+            <!--联系我-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">联系我</h3>
+                <div class="ui list">
+                    <div class="item">
+                        <div class="content"><i class="user icon"></i>流水无情</div>
+                    </div>
+                    <div class="item">
+                        <div class="content"><i class="marker icon"></i>四川-绵阳</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <i class="mail icon"></i>
+                            <a href="#" class="m-contact-way">369458281@qq.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--微信公众号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">微信公众号</h3>
+                <img src="../static/images/avtor.jpg" class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--qq群号-->
+            <div class="four wide column">
+                <h3 class="ui inverted header">QQ群号</h3>
+                <img src="../static/images/avtor.jpg" class="ui centered medium rounded image" style="width: 150px">
+            </div>
+            <!--名言-->
+            <div class="four wide column">
+                <h3>Blog</h3>
+                <p>这是我的个人博客、记录学习进度和关于编程、写作、思考相关的任何内容...</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <div>
+            <p class="m-text-thin m-text-spaced">
+                Copyright © 2019 - 2020  XSH   Designed by Xiong_sh
+                <br>
+                赣ICP备20000310号
+                <br>
+                赣公网安备 36098102000147号
+                <br>
+                本站已安全运行 343 天 01 小时 55 分 51 秒
+            </p>
+
+        </div>
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    var isClosed=false;
+    var sidebar=$("#sidebarIcon");
+    $(".m-menu.toggle").click(function()
+    {
+
+        //$(".m-item").toggleClass("m-mobile-hide");
+        if(isClosed)
+        {
+            $(".m-item").slideDown();
+            sidebar.removeClass("sidebar icon");
+            sidebar.addClass("bookmark icon");
+            isClosed=false;
+        }else if(!isClosed)
+        {
+            $(".m-item").slideUp();
+            sidebar.removeClass("bookmark icon");
+            sidebar.addClass("sidebar icon");
+            isClosed=true;
+        }
+
+
+    });
+
+</script>
+</body>
+</html>

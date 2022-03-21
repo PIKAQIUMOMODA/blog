@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>照片墙</title>
+    <link rel="stylesheet" href="../static/css/test.css">
+</head>
+<body class="p-background">
+  <div>
+      <div class="p-container">
+          <div class="p-photowall-list">
+              <div class="p-list-item" >
+                  <div class="p-photo">
+                      <img class="p-photo-img" src="../static/images/a2.png" data-src="static/images/a1.png">
+                      <div class="p-photo-title">风景</div>
+                  </div>
+              </div>
+
+
+
+          </div>
+      </div>
+  </div>
+</body>
+<script>
+    /*窗口加载完成*/
+    window.onload=function () {
+        console.log("-----------------文档加载完成----------------------------");
+        var imgs=document.getElementsByTagName("img");
+        var $deviceHeight;//设备宽度
+        var $scrollTop;//滚动距离，滚动条滚动的距离
+        /*窗口滚动事件*/
+        window.onscroll=function () {
+
+            $deviceHeight=window.innerHeight;
+            $scrollTop=document.documentElement.scrollTop || document.body.scrollTop;//这里是html下的高度
+            //最好的方式是每次滚动前，重新获取数组的个数。
+
+            for (var i=0;i<imgs.length;i++) {
+
+                if(imgs[i].getAttribute("src")!="static/images/a2.png"){
+                    console.log("已经加载过了");
+                    continue;//如果当前元素已经被加载了就不用执行了。
+                }
+                if(isShow(imgs[i])) {
+                    /*改变显示值*/
+                    (function (i) {
+                        setTimeout(function () {
+                            var temp=new Image();
+                            temp.src=imgs[i].getAttribute("data-src");
+                             temp.onload=function () {
+                                   imgs[i].src=imgs[i].getAttribute("data-src");
+
+                             }
+
+                        }, 3000);
+                })(i);
+                }
+
+            }
+
+
+        }
+        //是否显示
+        function isShow(img)
+        {
+            return ($deviceHeight+$scrollTop>=img.offsetTop);
+        }
+
+    }
+
+
+
+
+
+
+</script>
+</html>

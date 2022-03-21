@@ -1,0 +1,23 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#日志配置
+logging:
+  level:
+    root: info
+  file:
+    max-history: 7
+    max-size: 20MB
+    name: D:/BlogDevLogging/blog-dev.log
+  #  path: D:/BlogDevLogging/
+server:
+  port: 8081
